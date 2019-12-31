@@ -96,7 +96,7 @@ void Game::gamemode_single()
 		board.printBoard();
 		if (counter % 2 != 0)
 		{
-			cout << player1.getPlayerName() << "'s turn. Input position (x, y): ";
+			cout << player1.getPlayerName() << " (" << player1.getPlayerSymbol() << ")'s turn. Input position (x, y): ";
 			cin >> x >> y;
 			while (incorrectInputNum(x) || incorrectInputNum(y) || board.positionIsMarked(x, y))
 			{
@@ -107,7 +107,7 @@ void Game::gamemode_single()
 		}
 		else
 		{
-			cout << player2.getPlayerName() << "'s turn.";
+			cout << player2.getPlayerName() << " (" << player2.getPlayerSymbol() << ")'s turn.";
 			board.findBestMove(x, y, player2.getPlayerSymbol(), player1.getPlayerSymbol());
 			board.setMark(x, y, player2.getPlayerSymbol());
 		}
@@ -180,9 +180,9 @@ void Game::gamemode_multi()
 		cout << endl;
 		board.printBoard();
 		if (counter % 2 != 0)
-			cout << player1.getPlayerName() << "'s turn. Input position (x, y): ";
+			cout << player1.getPlayerName() << " (" << player1.getPlayerSymbol() << ")'s turn. Input position (x, y): ";
 		else
-			cout << player2.getPlayerName() << "'s turn. Input position (x, y): ";
+			cout << player2.getPlayerName() << " (" << player2.getPlayerSymbol() << ")'s turn. Input position (x, y): ";
 		cin >> x >> y;
 		while (incorrectInputNum(x) || incorrectInputNum(y) || board.positionIsMarked(x, y))
 		{
